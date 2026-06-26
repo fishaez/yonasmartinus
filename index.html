@@ -1,856 +1,738 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
-<style>
-  .gold-orange {
-    color: #FFA500;
-  }
-</style>
-    
+<html lang="en">
 <head>
-    <!-- OneSignal Web SDK -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
-          appId: "062653ba-a024-4307-895f-e3b65bba57ac",
-        });
-      });
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yonas Martinus — Technical Support & Integration Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Yonas Martinus</title>
-    <meta name="description" content="Check Out My Journey Here.">
-    <meta property="og:image" content="/images/Y logo.png"/>
-    <meta name="author" content="">
+  <!-- =====================  IMAGE GUIDE  ========================
+  All images live in:  assets/images/   (create this folder next to index.html)
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  REQUIRED FILES:
+  ┌─ assets/images/
+  │   ├── my-avatar.jpg          ← Your profile/headshot photo (square, ~400×400 px)
+  │   ├── logo.ico               ← Browser tab favicon (any small square icon)
+  │   │
+  │   ├── portfolio-1.jpg        ← Design portfolio screenshot / project image 1
+  │   ├── portfolio-2.jpg        ← Design portfolio screenshot / project image 2
+  │   ├── portfolio-3.jpg        ← Design portfolio screenshot / project image 3
+  │   ├── portfolio-4.jpg        ← (add more as needed)
+  │   │
+  │   └── (optional)
+  │       ├── logo-domtar.png    ← Company logo – Domtar (grayscale or colour)
+  │       ├── logo-rr.png        ← Company logo – Rolls-Royce Power Systems
+  │       ├── logo-panasonic.png ← Company logo – Panasonic
+  │       ├── logo-app.png       ← Company logo – Asia Pulp & Paper
+  │       └── logo-accenture.png ← Company logo – Accenture
+  ================================================================ -->
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css"> 
-    <link rel="stylesheet" href="css/vendor.css"> 
-    <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ===================== RESET ===================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    a { text-decoration: none; }
+    li { list-style: none; }
+    img, ion-icon, a, button, time, span { display: inline-block; }
+    input, textarea { font: inherit; }
+    button { cursor: pointer; background: none; border: none; }
+    address { font-style: normal; }
+    html { scroll-behavior: smooth; }
 
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
+    /* ===================== CUSTOM PROPERTIES ===================== */
+    :root {
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240,1%,25%) 3%, hsl(0,0%,19%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(240,1%,18%,0.251) 0%, hsla(240,2%,11%,0) 100%), hsl(240,2%,13%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45,100%,71%) 0%, hsla(36,100%,69%,0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45,100%,71%,0.251) 0%, hsla(35,100%,68%,0) 59.86%),hsl(240,2%,13%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0,0%,25%) 0%, hsla(0,0%,25%,0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, hsl(45,100%,72%), hsl(35,100%,68%));
+      --jet: hsl(0,0%,22%);
+      --onyx: hsl(240,1%,17%);
+      --eerie-black-1: hsl(240,2%,13%);
+      --eerie-black-2: hsl(240,2%,12%);
+      --smoky-black: hsl(0,0%,7%);
+      --white-1: hsl(0,0%,100%);
+      --white-2: hsl(0,0%,98%);
+      --orange-yellow-crayola: hsl(45,100%,72%);
+      --vegas-gold: hsl(45,54%,58%);
+      --light-gray: hsl(0,0%,84%);
+      --light-gray-70: hsla(0,0%,84%,0.7);
+      --bittersweet-shimmer: hsl(0,43%,51%);
+      --ff-poppins: 'Poppins', sans-serif;
+      --fs-1: 24px; --fs-2: 18px; --fs-3: 17px; --fs-4: 16px;
+      --fs-5: 15px; --fs-6: 14px; --fs-7: 13px; --fs-8: 11px;
+      --fw-300: 300; --fw-400: 400; --fw-500: 500; --fw-600: 600;
+      --shadow-1: -4px 8px 24px hsla(0,0%,0%,0.25);
+      --shadow-2: 0 16px 30px hsla(0,0%,0%,0.25);
+      --shadow-3: 0 16px 40px hsla(0,0%,0%,0.25);
+      --shadow-4: 0 25px 50px hsla(0,0%,0%,0.15);
+      --shadow-5: 0 24px 80px hsla(0,0%,0%,0.25);
+      --transition-1: 0.25s ease;
+      --transition-2: 0.5s ease-in-out;
+    }
 
-    <!-- favicons
-    ================================================== -->
-   <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-    <link rel="shortcut icon" type="image/png" href="images/Y logo.png">
-    <link rel="icon" type="image/png" href="images/Y logo.png">
+    /* ===================== REUSED STYLES ===================== */
+    body { background: var(--smoky-black); font-family: var(--ff-poppins); }
+    .sidebar, article { background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 20px; padding: 15px; box-shadow: var(--shadow-1); z-index: 1; }
+    .separator { width: 100%; height: 1px; background: var(--jet); margin: 16px 0; }
+    .icon-box { position: relative; background: var(--border-gradient-onyx); width: 30px; height: 30px; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 16px; color: var(--orange-yellow-crayola); box-shadow: var(--shadow-1); z-index: 1; }
+    .icon-box::before { content: ''; position: absolute; inset: 1px; background: var(--eerie-black-1); border-radius: inherit; z-index: -1; }
+    ion-icon { color: inherit; }
+    .h1,.h2,.h3,.h4,.h5 { color: var(--white-2); font-weight: var(--fw-500); line-height: 1.3; }
+    .h1 { font-size: var(--fs-1); }
+    .h2 { font-size: var(--fs-2); }
+    .h3 { font-size: var(--fs-3); }
+    .h4 { font-size: var(--fs-4); }
+    .h5 { font-size: var(--fs-7); font-weight: var(--fw-500); }
+    .article-title { position: relative; padding-bottom: 7px; }
+    .article-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 3px; background: var(--text-gradient-yellow); border-radius: 3px; }
+    .has-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+    .has-scrollbar::-webkit-scrollbar-track { background: var(--onyx); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-thumb { background: var(--orange-yellow-crayola); border-radius: 5px; }
+    .content-card { position: relative; background: var(--border-gradient-onyx); padding: 15px; border-radius: 14px; box-shadow: var(--shadow-2); cursor: pointer; z-index: 1; }
+    .content-card::before { content: ''; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; }
+
+    /* ===================== MAIN ===================== */
+    main { display: flex; flex-direction: column; gap: 24px; padding: 20px; min-height: 100vh; }
+    @media (min-width: 1250px) { main { flex-direction: row; align-items: flex-start; max-width: 1200px; margin: 40px auto; } }
+
+    /* ===================== SIDEBAR ===================== */
+    .sidebar { max-height: 112px; overflow: hidden; transition: var(--transition-2); }
+    .sidebar.active { max-height: 405px; }
+    .sidebar-info { display: flex; justify-content: flex-start; align-items: center; gap: 15px; }
+    .avatar-box { background: var(--bg-gradient-onyx); border-radius: 20px; }
+    .avatar-box img { border-radius: 20px; }
+
+    /* ---- PLACEHOLDER AVATAR (shown when no image is uploaded) ---- */
+    .avatar-placeholder { width: 80px; height: 80px; border-radius: 20px; background: var(--bg-gradient-onyx); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--orange-yellow-crayola); font-weight: var(--fw-600); }
+
+    .info-content .name { color: var(--white-2); font-size: var(--fs-3); font-weight: var(--fw-500); letter-spacing: -0.25px; margin-bottom: 10px; }
+    .info-content .title { color: var(--orange-yellow-crayola); background: var(--onyx); border-radius: 8px; font-size: 12px; font-weight: var(--fw-300); padding: 3px 12px; width: max-content; }
+    .info_more-btn { position: absolute; top: -15px; right: -15px; border-radius: 0 15px; padding: 10px 15px; box-shadow: var(--shadow-2); background: var(--border-gradient-onyx); color: var(--orange-yellow-crayola); font-size: 13px; display: flex; align-items: center; gap: 10px; z-index: 1; }
+    .info_more-btn::before { content: ''; position: absolute; inset: 1px; border-radius: inherit; background: var(--bg-gradient-jet); z-index: -1; }
+    .info_more-btn > ion-icon { font-size: 13px; }
+    .info_more-btn > span { display: none; }
+    @media (min-width: 580px) { .info_more-btn > span { display: block; } }
+    .sidebar-info { position: relative; }
+    .sidebar-info_more { opacity: 0; visibility: hidden; transition: var(--transition-2); }
+    .sidebar.active .sidebar-info_more { opacity: 1; visibility: visible; }
+    .contacts-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .contact-item { min-width: 100%; display: flex; align-items: center; gap: 16px; }
+    .contact-info .contact-title { color: var(--light-gray-70); font-size: var(--fs-8); text-transform: uppercase; margin-bottom: 2px; }
+    .contact-info .contact-link, .contact-info address { color: var(--white-2); font-size: var(--fs-7); }
+    .contact-info .contact-link:hover { color: var(--orange-yellow-crayola); }
+    .social-list { display: flex; justify-content: flex-start; align-items: center; gap: 15px; padding-bottom: 4px; padding-left: 7px; }
+    .social-item .social-link { color: var(--light-gray-70); font-size: 18px; }
+    .social-item .social-link:hover { color: var(--light-gray); }
+    @media (min-width: 1250px) { .sidebar { position: sticky; top: 40px; max-height: unset; overflow: visible; width: 280px; flex-shrink: 0; } .sidebar-info_more { opacity: 1; visibility: visible; } .info_more-btn { display: none; } }
+
+    /* ===================== NAVBAR ===================== */
+    .navbar { position: sticky; top: 0; z-index: 5; background: hsla(240,1%,17%,0.75); backdrop-filter: blur(10px); border: 1px solid var(--jet); border-radius: 20px; padding: 0 20px; box-shadow: var(--shadow-2); margin-bottom: 20px; }
+    .navbar-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 0 10px; }
+    .navbar-link { color: var(--light-gray); font-size: var(--fs-8); padding: 20px 7px; transition: color var(--transition-1); }
+    .navbar-link:hover, .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+    /* ===================== ARTICLES ===================== */
+    article { display: none; }
+    article.active { display: block; animation: fade .5s ease backwards; }
+    @keyframes fade { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: none; } }
+
+    /* ===================== ABOUT ===================== */
+    .about-text p { color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); line-height: 1.6; margin-bottom: 15px; }
+    .service { margin-top: 30px; }
+    .service-title { margin-bottom: 20px; }
+    .service-list { display: grid; gap: 20px; }
+    @media (min-width: 580px) { .service-list { grid-template-columns: 1fr 1fr; } }
+    .service-item { position: relative; background: var(--border-gradient-onyx); padding: 20px; border-radius: 14px; box-shadow: var(--shadow-2); z-index: 1; }
+    .service-item::before { content: ''; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; }
+    .service-icon-box { margin-bottom: 10px; }
+    .service-icon-box ion-icon { font-size: 28px; color: var(--orange-yellow-crayola); }
+    .service-content-box .h4 { margin-bottom: 7px; }
+    .service-item-text { color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); line-height: 1.6; }
+
+    /* ===================== RESUME ===================== */
+    .article-title { margin-bottom: 30px; }
+    .timeline { margin-bottom: 30px; }
+    .title-wrapper { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+    .timeline-list { font-size: var(--fs-6); margin-left: 45px; }
+    .timeline-item { position: relative; }
+    .timeline-item:not(:last-child) { margin-bottom: 20px; }
+    .timeline-item-title { font-size: var(--fs-6); line-height: 1.3; margin-bottom: 7px; }
+    .timeline-list span { color: var(--vegas-gold); font-weight: var(--fw-400); line-height: 1.6; }
+    .timeline-item:not(:last-child)::before { content: ''; position: absolute; top: -25px; left: -30px; width: 1px; height: calc(100% + 50px); background: var(--jet); }
+    .timeline-item::after { content: ''; position: absolute; top: 5px; left: -33px; height: 6px; width: 6px; background: var(--text-gradient-yellow); border-radius: 50%; box-shadow: 0 0 0 4px var(--jet); }
+    .timeline-text { color: var(--light-gray); font-weight: var(--fw-300); line-height: 1.6; margin-top: 8px; }
+    .skills-title { margin-bottom: 20px; }
+    .skills-list { padding: 20px; }
+    .skills-item:not(:last-child) { margin-bottom: 15px; }
+    .skill .title-wrapper { margin-bottom: 8px; }
+    .skill .title-wrapper data { color: var(--light-gray); font-size: var(--fs-7); font-weight: var(--fw-300); }
+    .skill-progress-bg { background: var(--onyx); border-radius: 10px; height: 8px; }
+    .skill-progress-fill { background: var(--text-gradient-yellow); height: 8px; border-radius: 10px; }
+
+    /* ===================== PORTFOLIO ===================== */
+    .filter-list { display: none; }
+    @media (min-width: 580px) { .filter-list { display: flex; justify-content: flex-start; align-items: center; gap: 25px; padding-left: 5px; margin-bottom: 30px; } }
+    .filter-item button { color: var(--light-gray); font-size: var(--fs-6); transition: color var(--transition-1); }
+    .filter-item button:hover, .filter-item button.active { color: var(--orange-yellow-crayola); }
+    .filter-select-box { position: relative; margin-bottom: 25px; }
+    @media (min-width: 580px) { .filter-select-box { display: none; } }
+    .filter-select { display: flex; justify-content: space-between; align-items: center; width: 100%; background: var(--eerie-black-2); color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); padding: 12px 16px; border: 1px solid var(--jet); border-radius: 14px; }
+    .filter-select.active .select-icon { transform: rotate(0.5turn); }
+    .select-list { display: none; position: absolute; top: calc(100% + 6px); width: 100%; background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 14px; z-index: 2; overflow: hidden; }
+    .filter-select.active + .select-list { display: block; }
+    .select-item button { width: 100%; background: var(--eerie-black-2); color: var(--light-gray); font-size: var(--fs-6); font-weight: var(--fw-300); padding: 8px 16px; text-align: left; }
+    .select-item button:hover { background: var(--onyx); color: var(--orange-yellow-crayola); }
+    .project-list { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media (min-width: 580px) { .project-list { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 992px) { .project-list { grid-template-columns: 1fr 1fr 1fr; } }
+    .project-item { display: none; }
+    .project-item.active { display: block; animation: fade .5s ease backwards; }
+    .project-item a { width: 100%; }
+    .project-img { position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 15px; aspect-ratio: 16/10; }
+    .project-img > img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-1); }
+    .project-item a:hover .project-img > img { transform: scale(1.05); }
+    .project-item-icon-box { --scale: 0.8; background: var(--jet); color: var(--orange-yellow-crayola); position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(var(--scale)); font-size: 20px; padding: 18px; border-radius: 12px; opacity: 0; transition: var(--transition-1); z-index: 1; }
+    .project-item a:hover .project-item-icon-box { --scale: 1; opacity: 1; }
+    .project-title { color: var(--white-2); font-size: var(--fs-5); font-weight: var(--fw-400); text-transform: capitalize; line-height: 1.3; }
+    .project-category { color: var(--light-gray-70); font-size: var(--fs-6); font-weight: var(--fw-300); }
+
+    /* ===================== CONTACT ===================== */
+    .mapbox { position: relative; height: 250px; width: 100%; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--jet); overflow: hidden; }
+    .mapbox iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(1); }
+    .contact-form { margin-top: 20px; }
+    .form-title { margin-bottom: 20px; }
+    .input-wrapper { display: grid; grid-template-columns: 1fr; gap: 25px; margin-bottom: 25px; }
+    @media (min-width: 580px) { .input-wrapper { grid-template-columns: 1fr 1fr; } }
+    .form-input { color: var(--white-2); font-size: var(--fs-6); font-weight: var(--fw-400); padding: 13px 20px; background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 14px; outline: none; width: 100%; }
+    .form-input:focus { border-color: var(--orange-yellow-crayola); }
+    textarea.form-input { min-height: 100px; height: 120px; max-height: 200px; resize: vertical; margin-bottom: 25px; }
+    .form-btn { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 13px 20px; background: var(--border-gradient-onyx); color: var(--orange-yellow-crayola); font-size: var(--fs-6); text-transform: capitalize; border-radius: 14px; box-shadow: var(--shadow-3); transition: var(--transition-1); position: relative; z-index: 1; }
+    .form-btn::before { content: ''; position: absolute; inset: 1px; background: var(--bg-gradient-jet); border-radius: inherit; z-index: -1; transition: var(--transition-1); }
+    .form-btn ion-icon { font-size: 16px; }
+    .form-btn:hover { background: var(--bg-gradient-yellow-1); }
+    .form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+    .form-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    /* ===================== RESPONSIVE ADJUSTMENTS ===================== */
+    @media (min-width: 1250px) {
+      .main-content { min-width: 0; flex: 1; }
+    }
+  </style>
 </head>
 
-
-<body id="top">
-
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
-        </div>
-
-        <nav class="header-nav-wrap">
-            <ul class="header-nav">
-                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                <li><a class="smoothscroll"  href="#works" title="projects">Projects / Designs</a></li>
-                <li><a class="smoothscroll"  href="#blog" title="readings">Readings</a></li>
-                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header> <!-- end s-header -->
-
-
-   <!-- home
-   ================================================== -->
-   <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/background.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-
-        <div class="overlay"></div>
-        <div class="shadow-overlay"></div>
-
-        <div class="home-content">
-
-            <div class="row home-content__main">
-
-                <h3 class="gold-orange">Hello There</h3>
-
-                <h1>
-                    I am Yonas. <br>
-                    Design Enthusiast.<br>
-                    ERP Solutions Architect.
-                </h1>
-
-                <div class="home-content__buttons">
-                    <a href="#works" class="smoothscroll btn btn--stroke">
-                        Latest Projects
-                    </a>
-                    <a href="#about" class="smoothscroll btn btn--stroke">
-                        More About Me
-                    </a>
-                </div>
-
-                <div class="home-content__scroll">
-                    <a href="#about" class="scroll-link smoothscroll">
-                        <span>Scroll Down</span>
-                    </a>
-                </div>
-
-            </div>
-
-        </div> <!-- end home-content -->
-
-        <ul class="home-social">
-            <li>
-                <a href="https://www.linkedin.com/in/jaredtan1/"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
-            </li>
-            <li>
-                <a href="https://github.com/jaredtcy"><i class="im im-github" aria-hidden="true"></i><span>Github</span></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/foodbymumsg/"><i class="im im-laptop-o" aria-hidden="true"></i><span>Interest</span></a>
-            </li>
-
-        </ul>
-        <!-- end home-social -->
-
-    </section> <!-- end s-home -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about target-section">
-        
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full text-center">
-                <h3>About</h3>
-                <h1>Jared</h1>
-                <p class="lead">People who know me, will often find me keeping myself busy with work-Be it part time jobs/self-created projects. Being someone who loves challenges, I always believe that no two days are the same.
-                    Below are some of my guiding values.
-                </p>
-            </div>
-        </div>
-
-        <div class="row about-content">
-
-            <div class="col-six tab-full left">
-                <h3>Lifelong Learning</h3>
-                <p>
-                I always believe in doing the best you can and that basically means constantly improving yourself. I strongly believe that everytime when you think you have achieved the best results, there are definitely more to be learned and achieved. 
-                    (Of course, don't forget to take a break as well :) ) 
-                </p>
-                <h3>Generosity</h3>
-                <p>
-                "You do not have to be rich to be generous" This has always been the quote that inspired me to give back more to the society. I always believe that there is always someone out there who needs your help and thats the reason why I always volunteer as much as I can, whenever I can. 
-                </p>
-                <h3>Communication</h3>
-                <p>
-               This has always been a 'topic' given the rise of mobile phones. I personally believe that communication is the solution to every issue. When we have doubts, we ask. When we have conflicts, we communicate. When we have ideas, we share. These are the principles that I have been following and 
-                    I often urge my friends to try to do it as well. 
-                </p>
-
-            </div>
-
-            <div class="col-six tab-full right">
-                <h3>I've Got Some Skills.</h3>
-
-                <ul class="skill-bars">
-                    <li>
-                    <div class="progress percent70"><span>70%</span></div>
-                    <strong>C++</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent60"><span>60%</span></div>
-                    <strong>SQL</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent50"><span>50%</span></div>
-                    <strong>Python</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent60"><span>60%</span></div>
-                    <strong>Docker</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent50"><span>50%</span></div>
-                    <strong>HTML/CSS</strong>
-                    </li>
-                    <!--
-                    <li>
-                    <div class="progress percent50"><span>50%</span></div>
-                    <strong>Premiere Pro</strong>
-                    </li> -->
-                </ul>
-            </div>
-
-        </div> <!-- end about-content -->
-
-        <div class="row about-content about-content--buttons">
-
-            <div class="col-six tab-full left">
-                <a href="google.com" class="btn btn--primary full-width">Download My Resume</a>
-            </div>
-            <div class="col-six tab-full right">
-                <a href="mailto:tanchaoyang93@outlook.com" class="btn full-width">Drop Me A Mail</a>
-            </div>
-
-        </div> <!-- end about-content buttons -->
-
-        <div class="row about-content about-content--timeline">
-
-            <div class="col-full text-center">
-                <h3>My Resume In Pictures.</h3>
-            </div>
-
-            <div class="col-six tab-full left">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">June 2023 - Present</p>
-                            <img src="images/Nuvei.jpg">
-                            <h3>Nuvei</h3>
-                            <h5>Tech Ops Specialist</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>-</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Dec 2022 - June 2023</p>
-                            <img src="images/Fireblocks.jpg">
-                            <h3>Fireblocks</h3>
-                            <h5>Technical Support Engineer</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>-
-                            </p>
-                        </div>
-
-                    </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Jan 2022 - Dec 2022</p>
-                            <img src="images/Twitter.jpg">
-                            <h3>Twitter</h3>
-                            <h5>Support Engineer / Partner Engineer</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>-</p>
-                        </div>
-
-                    </div> <!-- end timeline__block -->
-
-
-
-                </div> <!-- end timeline -->
-            </div> <!-- end left -->
-
-            <div class="col-six tab-full right">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Oct 2021 - Jan 2022</p>
-                            <img src="images/studentaffairs.jpg">
-                            <h3>Facebook</h3>
-                            <h5>Enterprise API Support Specialist</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>-</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Feb 2020 - Oct 2021</p>
-                            <img src="images/shopee.jpg">
-                            <h3>Shopee</h3>
-                            <h5>L2 Product Support Engineer</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>-</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">May 2016-Dec 2019</p>
-                            <img src="images/scholarship.JPG">
-                            <h3>PSC (Engineering) Scholarship</h3>
-                            <h5>Built Environment Sector Scholar</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>- </p>
-                        </div>
-                    </div> <!-- end timeline__block -->
-                </div> <!-- end timeline -->
-            </div> <!-- end right -->
-
-        </div> <!-- end about-content timeline -->
-
-    </section> <!-- end about -->
-
-
-    <!-- works
-    ================================================== -->
-    <section id="works" class="s-works target-section">
-
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full">
-                <h3>Projects</h3>
-                <h1>Check Out My Container Projects.</h1>
-
-                <p class="lead">Projects are done mainly on Docker and Kubernetes.</p>
-            </div>
-        </div>
-
-        <div class="row masonry-wrap">
-            <div class="masonry">
-
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/gallery/dockercraft.png" class="thumb-link" title="Docker Craft" data-size="800x500">
-                                <img src="images/portfolio/gallery/dockercraft.png"
-                                     srcset="images/portfolio/gallery/dockercraft.png" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Docker Craft
-                            </h3>
-                            <p class="item-folio__cat">
-                                Docker
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/jaredtcode/dockercraft" class="item-folio__project-link" title="Project link"
-                           onclick="window.open(this.href); return false;"
-                           onkeypress="window.open(this.href); return false;">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <div class="item-folio__caption">
-                            <p></p>
-                        </div>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/gallery/staticwebsite.png" class="thumb-link" title="Static Website" data-size="2667x1500">
-                                <img src="images/portfolio/gallery/staticwebsite.png"
-                                     srcset="images/portfolio/gallery/staticwebsite.png" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Static Website
-                            </h3>
-                            <p class="item-folio__cat">
-                                Docker
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/jaredtcode/Static-website-on-docker" class="item-folio__project-link" title="Project link"
-                           onclick="window.open(this.href); return false;"
-                           onkeypress="window.open(this.href); return false;">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <div class="item-folio__caption">
-                            <p></p>
-                        </div>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/gallery/simpleapplication.png" class="thumb-link" title="Simple Application" data-size="2667x1500">
-                                <img src="images/portfolio/gallery/simpleapplication.png"
-                                     srcset="images/portfolio/gallery/simpleapplication.png" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Simple Application
-                            </h3>
-                            <p class="item-folio__cat">
-                                Docker
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/jaredtcy/Simple-Applicaiton" class="item-folio__project-link" title="Project link"
-                           onclick="window.open(this.href); return false;"
-                           onkeypress="window.open(this.href); return false;">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <div class="item-folio__caption">
-                            <p></p>
-                        </div>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/gallery/compose.png" class="thumb-link"  title="Running Application on 2 Containers" data-size="2667x1500">
-                                <img src="images/portfolio/gallery/compose.png"
-                                     srcset="images/portfolio/gallery/compose.png" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Networking set-up for 2 Containers
-                            </h3>
-                            <p class="item-folio__cat">
-                                Docker
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/jaredtcy/dockercompose" class="item-folio__project-link" title="Project link"
-                           onclick="window.open(this.href); return false;"
-                           onkeypress="window.open(this.href); return false;">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>US Nature Trails Usage</p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-            </div>
-        </div> <!-- end masonry -->
-
-    </section> <!-- end works -->
-
-
-
-    <!-- testimonials
-    <div class="s-testimonials">
-        <div class="overlay"></div>
-        <div class="row testimonials-header">
-            <div class="col-full">
-                <h1 class="h02">What People Say.</h1>
-            </div>
-        </div>
-        <div class="row testimonials">
-            <div class="col-full testimonials__slider">
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum.
-                    Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.</p>
-                    <div class="testimonials__author h06">
-                        Tim Cook
-                        <span>CEO, Apple</span>
-                    </div>
-                </div>
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                    Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-                    <div class="testimonials__author h06">
-                        Sundar Pichai
-                        <span>CEO, Google</span>
-                    </div>
-                </div>
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-                    <div class="testimonials__author h06">
-                        Satya Nadella
-                        <span>CEO, Microsoft</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
-
-
-    <!-- blog
-    ================================================== -->
-    <section id="blog" class="s-blog target-section">
-
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full">
-                <h3>Readings</h3>
-                <h1>My two cents worth</h1>
-                <p class="lead">Every book that we read has some lessons to be learned. These are some of the books that I have read and here are my reflections on it.</p>
-            </div>
-        </div>
-
-        <div class="row blog-content">
-            <div class="col-full">
-
-                <div class="blog-list block-1-2 block-tab-full">
-                    <article class="col-block">
-
-                        <div class="blog-date">
-                            <a href="http://www.effectiveengineer.com/">April 2021</a>
-                        </div>
-
-                        <h2 class="h01"><a href="http://www.effectiveengineer.com/">The Effective Engineer.</a></h2>
-                        <p> My take on this is probably not going to be the most popular, but I do agree with the author on this one. (Automation and tooling is necessary) 
-                            It is in the blood of an engineer to invent an elegant solution given a particular problem at hand. Automation is no different than the “original task” to be done. 
-                            “Rethinking” and “ongoing development” is probably indicative of the wrong solution implemented by the engineer, resulting in a downward spiral of productivity. 
-                            I think the only way to get it right is through experience after several spirals, or to learn from the experience of those who have been through similar situations.
-
-                        </p>
-
-                        <div class="blog-cat">
-                                <a href="http://www.effectiveengineer.com/">Book Summary</a><a href="http://www.effectiveengineer.com/">Learning</a>
-                        </div>
-
-
-                    </article>
-                    <article class="col-block">
-
-                        <div class="blog-date">
-                            <a href="https://www.msbkwt.com/images/Files_2019_20/Library/Haemin_Sunim_-_The_Things_You_Can_See_Only_When_You_Slow_Down.pdf">March 2021</a>
-                        </div>
-
-                        <h2 class="h01"><a href="https://www.msbkwt.com/images/Files_2019_20/Library/Haemin_Sunim_-_The_Things_You_Can_See_Only_When_You_Slow_Down.pdf">The Things You Can See Only When You Slow Down</a></h2>
-                        <p>
-                           We live in a world that’s extremely busy and it’s quite hard for us humans to find some rest with all of the notifications we receive on our mobile phones and 
-                            overall we’re just left with a feeling of unease and restlessness, if we allow our environment to do so. This book has helped me to look at things in a different way to create rest
-                            for myself.  With COVID-19, we can be overwhelmed by the pressure around us and I don’t find it surprising that many people are feeling burnt out, down, or even depressed by all the demands 
-                            that are constantly being made from their environment. It's really important that at times, we slow down our pace of life and take a step back to think things through for us to be physically and mentally healthy. 
-                          
-                        </p>
-
-
-                        <div class="blog-cat">
-                            <a href="https://www.msbkwt.com/images/Files_2019_20/Library/Haemin_Sunim_-_The_Things_You_Can_See_Only_When_You_Slow_Down.pdf">Book Summary</a><a href="https://www.msbkwt.com/images/Files_2019_20/Library/Haemin_Sunim_-_The_Things_You_Can_See_Only_When_You_Slow_Down.pdf">Learning</a>
-                        </div>
-
-
-                    </article>
-                    <article class="col-block">
-
-                        <div class="blog-date">
-                            <a href="https://www.oneandjune.com/blog/tiktok-for-small-mediumnbspbusinesses-in-seanbsp">March 2021</a>
-                        </div>
-
-                        <h2 class="h01"><a href="https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/">API Limiting</a></h2>
-                        <p>
-                           Just sharing what I have learned on the brief introduction of API Limiting. API Rate Limiting is basically restricting the number of times a particular end user is able to call the endpoint. There are a couple of ways to do this, and the way that we chose would be to utilize a Redis cache. 
-                           The idea is to have a key-value pair (user ID as the key and times accessed as value that will update everytime a call is made, and although there are various options to use, I personally believe that Redis is perfect for handling little tasks like that.There’re many considerations to take 
-                           into account for such a simple implementation. A cursory look online points to having to deal with HTTP headers (agh damn networking), different time buckets and also pipelining. It is certainly good to dive more into the details in time to come.
-                        </p>
-                        <div class="blog-cat">
-                            <a href="https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/">Personal Project</a><a href="https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/">Learning</a>
-                        </div>
-                    </article>
-                    <article class="col-block">
-
-                        <div class="blog-date">
-                            <a href="https://sites.google.com/a/arnhemkopo.web.app/zbouv2/surrounded-by-idiots-the-four-types-of-human-behavior-and-how-to-effectively-communicate-with-each-in-business-and-in-b07j4yt2hb">Feb 2021</a> 
-                        </div>
-                        <h2 class="h01"><a href="https://sites.google.com/a/arnhemkopo.web.app/zbouv2/surrounded-by-idiots-the-four-types-of-human-behavior-and-how-to-effectively-communicate-with-each-in-business-and-in-b07j4yt2hb">Surrounded By Idiots</a></h2>
-                        <p>
-                            This book features DISC profile which is a personality test and is definitely a really insightful and refreshing read. It simply lays out the traits – good, bad, and ugly – of each of the profiles, and makes it easier to spot them; not just in yourself but in others.
-                            Nothing beats having an actual DISC profile but this book does an excellent job in showing the behaviour you will witness from each of these types and how you can manage the dynamics of your relationships. Whilst it has a business focus – he is a leadership specialist after all – 
-                            there is no doubt this can also work with your personal life too.
-                        </p>
-
-                        <div class="blog-cat">
-                            <a href="https://sites.google.com/a/arnhemkopo.web.app/zbouv2/surrounded-by-idiots-the-four-types-of-human-behavior-and-how-to-effectively-communicate-with-each-in-business-and-in-b07j4yt2hb">Book Summary</a><a href="https://sites.google.com/a/arnhemkopo.web.app/zbouv2/surrounded-by-idiots-the-four-types-of-human-behavior-and-how-to-effectively-communicate-with-each-in-business-and-in-b07j4yt2hb">Learning</a>
-                        </div>
-                    </article>
-                </div> <!-- end blog-list -->
-
-            </div> <!-- end col-full -->
-        </div> <!-- end blog-content -->
-
-    </section> <!-- end s-blog -->
-
-
-    <!-- s-cta
-    <section class="s-cta">
-        <div class="row narrow cta">
-            <div class="col-full cta__content">
-                <h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
-                <p class="lead">
-                Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
-                Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
-                </p>
-                <div class="cta__action">
-                    <a class="btn btn--primary btn--large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
-
-    <!-- s-stats
-    ================================================== -->
-    <section id="stats" class="s-stats">
-        <div class="row block-1-4 block-tab-1-2 block-mob-full stats">
-
-            <div class="col-block stats__col ">
-                <div class="stats__count">
-                    3
-                </div>
-                <h4>Side Projects</h4>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">
-                    4
-                </div>
-                <h4>Certifications</h4>
-            </div>
-            <div class="col-block stats__col stats__col--highlight">
-                <!--
-                <div class="stats__upsign">
-                    <a href="#"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                </div> -->
-                <div class="stats__count">
-                    6
-                </div>
-                <h4>Awards Received </h4>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">
-                    2
-                </div>
-                <h4>Volunteer Projects</h4>
-            </div>
-
-        </div>
-    </section> <!-- end s-stats -->
-
-
-    <!-- s-stats
-    ================================================== -->
-  <section id="contact" class="s-contact target-section">
-
-  <div class="overlay"></div>
-
-  <div class="row narrow section-intro">
-      <div class="col-full">
-          <h3>Contact</h3>
-          <h1>Say Hello.</h1>
-
-          <p class="lead">Feel free to drop me a message! </p>
-      </div>
-  </div>
-
-
-  <div class="row contact__main">
-      <div class="col-eight tab-full contact__form">
-          <form name="contactForm" id="contactForm" method="POST" action="https://formspree.io/jtan93180@gmail.com">
-              <fieldset>
-
-              <div class="form-field">
-                  <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-              </div>
-              <div class="form-field">
-                  <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
-              </div>
-              <div class="form-field">
-                  <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
-              </div>
-              <div class="form-field">
-                  <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
-              </div>
-              <div class="form-field">
-                  <button class="full-width btn--primary">Submit</button> 
-                  <div class="submit-loader">
-                      <div class="text-loader">Sending...</div>
-                      <div class="s-loader">
-                          <div class="bounce1"></div>
-                          <div class="bounce2"></div>
-                          <div class="bounce3"></div>
-                      </div>
-                  </div>
-              </div>
-
-              </fieldset>
-          </form>
-
-          <!-- contact-warning -->
-          <div class="message-warning">
-             Something went wrong. Please try again
-          </div>
-
-          <!-- contact-success -->
-          <div class="message-success">
-              Your message was sent, thank you!<br>
-          </div>
-
-      </div>
-      <!--
-      <div class="col-four tab-full contact__infos">
-          <h4 class="h06">Phone</h4>
-          <p>Phone: (+63) 555 1212<br>
-          Mobile: (+63) 555 0100<br>
-          Fax: (+63) 555 0101
-          </p>
-      -->
-
-          <h4 class="h06">Email</h4>
-          <p>tanchaoyang93@outlook.com<br>
-          </p>
-
-          <h4 class="h06">Connect Directly</h4>
-          <p>
-          https://www.linkedin.com/in/jaredtan1/<br>
-          </p>
+<body>
+<main>
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" data-sidebar>
+    <div class="sidebar-info">
+      <figure class="avatar-box">
+        <!--
+          REPLACE the div below with:
+          <img src="./assets/images/my-avatar.jpg" alt="Yonas Martinus" width="80">
+          once you have placed your photo in assets/images/
+        -->
+        <div class="avatar-placeholder">YM</div>
+      </figure>
+
+      <div class="info-content">
+        <h1 class="name" title="Yonas Martinus">Yonas Martinus</h1>
+        <p class="title">Technical Support Specialist</p>
       </div>
 
-  </div>
-
-</section> <!-- end s-contact -->
-
-
-
-    <!-- footer
-    ================================================== -->
-    <footer>
-        <div class="row">
-            <div class="col-full">
-
-                <div class="footer-logo">
-                    <a class="footer-site-logo" href="#0"><img src="images/logo.png" alt="Homepage"></a>
-                </div>
-
-                <ul class="footer-social">
-                    <li><a href="https://www.linkedin.com/in/jaredtan1/">
-                        <i class="im im-linkedin" aria-hidden="true"></i>
-                        <span>LinkedIn</span>
-                    </a></li>
-                    <li><a href="https://google.com">
-                        <i class="im im-newsletter" aria-hidden="true"></i>
-                        <span>Medium</span>
-                    </a></li>
-                    <li><a href="https://github.com/jaredtcy">
-                        <i class="im im-github" aria-hidden="true"></i>
-                        <span>Github</span>
-                    </a></li>
-                 
-                    <li><a href="https://www.instagram.com/foodbymumsg/">
-                        <i class="im im-laptop-o" aria-hidden="true"></i>
-                        <span>Interest</span>
-                    </a></li>
-                </ul>
-
-            </div>
-        </div>
-<!-- end
-        <div class="row footer-bottom">
-            <div class="col-twelve">
-                <div class="copyright">
-                    <span>© Copyright Hola 2017</span>
-                    <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>
-                </div>
-                <div class="go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div> -->
-         <!-- end footer-bottom -->
-    </footer> <!-- end footer -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div><!-- end photoSwipe background -->
-
-    <div id="preloader">
-        <div id="loader"></div>
+      <button class="info_more-btn" data-sidebar-btn>
+        <span>Show Contacts</span>
+        <ion-icon name="chevron-down"></ion-icon>
+      </button>
     </div>
 
+    <div class="sidebar-info_more">
+      <div class="separator"></div>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+      <ul class="contacts-list">
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title">Email</p>
+            <a href="mailto:yonasmartinus@outlook.com" class="contact-link">yonasmartinus@outlook.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title">Phone</p>
+            <a href="tel:+6593725790" class="contact-link">(+65) 9372 5790</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title">Location</p>
+            <address>Richmond, BC, Canada</address>
+          </div>
+        </li>
+      </ul>
 
+      <div class="separator"></div>
+
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="https://linkedin.com/in/yonasmartinus" class="social-link" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://github.com/yonasmartinus" class="social-link" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <div class="main-content">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== ABOUT ===================== -->
+    <article class="about active" data-page="about">
+      <header><h2 class="h2 article-title">About Me</h2></header>
+
+      <section class="about-text">
+        <p>
+          I'm a Technical Support and Integration Specialist with 10+ years of experience supporting enterprise
+          systems across SAP, logistics, finance, and supply chain environments. I bridge the gap between complex
+          technical systems and the business teams that depend on them.
+        </p>
+        <p>
+          My strength lies in production support, system integration troubleshooting, and root cause analysis.
+          I enjoy digging into SQL, API logs, and transactional data to find answers fast — and communicating
+          those findings clearly to both technical and non-technical stakeholders.
+        </p>
+      </section>
+
+      <!-- WHAT I DO -->
+      <section class="service">
+        <h3 class="h3 service-title">What I Do</h3>
+        <ul class="service-list">
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <ion-icon name="build-outline"></ion-icon>
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Production Support</h4>
+              <p class="service-item-text">
+                Incident management, SLA-based support, root cause analysis, and post-go-live stabilization
+                in high-availability SAP environments.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <ion-icon name="swap-horizontal-outline"></ion-icon>
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">System Integration</h4>
+              <p class="service-item-text">
+                Troubleshooting cross-system integrations, REST API debugging with Postman, and interface
+                monitoring across SAP MM/WM/SD/FI modules.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <ion-icon name="code-slash-outline"></ion-icon>
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Data & SQL Analysis</h4>
+              <p class="service-item-text">
+                Writing SQL scripts to retrieve and analyse transactional data, validate integrations, and
+                identify issue patterns efficiently.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <ion-icon name="checkmark-done-outline"></ion-icon>
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Testing & Deployment</h4>
+              <p class="service-item-text">
+                SIT/UAT execution, defect management, release validation, and deployment support ensuring
+                production readiness.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+    </article>
+
+    <!-- ===================== RESUME ===================== -->
+    <article class="resume" data-page="resume">
+      <header><h2 class="h2 article-title">Resume</h2></header>
+
+      <!-- EDUCATION -->
+      <section class="timeline">
+        <div class="title-wrapper">
+          <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+          <h3 class="h3">Education</h3>
+        </div>
+        <ol class="timeline-list">
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Post-Diploma Certificate — Cloud Computing (AWS Solutions Architect)</h4>
+            <span>2021</span>
+            <p class="timeline-text">Nanyang Polytechnic (NYP), Singapore</p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">BSc Computer Science — Magna Cum Laude</h4>
+            <span>2008 – 2012</span>
+            <p class="timeline-text">BINUS University, Jakarta, Indonesia. Academic Excellence Scholarship recipient.</p>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="timeline">
+        <div class="title-wrapper">
+          <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+          <h3 class="h3">Experience</h3>
+        </div>
+        <ol class="timeline-list">
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Technical Support Specialist, SAP — Domtar</h4>
+            <span>Mar 2023 – Present · Richmond, BC</span>
+            <p class="timeline-text">
+              Primary technical liaison for key clients, providing SAP configuration guidance, REST API troubleshooting
+              (Postman), SQL-based diagnostics, and escalation support. Managed SIT/UAT cycles and coordinated
+              cross-team defect resolution to maintain system stability.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">SAP Logistics Functional Consultant — Rolls-Royce Power Systems</h4>
+            <span>Jul 2021 – Mar 2023 · Singapore</span>
+            <p class="timeline-text">
+              Delivered L2/L3 support for procurement and inventory systems across regional operations. Analysed
+              API HTTP/HTTPS traffic and transaction logs using Splunk/Datadog. Managed SIT/UAT and supported
+              post-go-live stabilization.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">SAP WM Team Lead & COE (SAP MM) — Panasonic Asia Pacific</h4>
+            <span>Sep 2018 – Jul 2021 · Singapore</span>
+            <p class="timeline-text">
+              Led regional production support for warehouse and procurement systems across multiple business units.
+              Managed critical incident resolution, cross-module integration analysis, and developed troubleshooting
+              documentation for support teams.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">SAP Business Analyst — Asia Pulp & Paper (Sinarmas)</h4>
+            <span>May 2015 – Aug 2018 · Indonesia</span>
+            <p class="timeline-text">
+              Supported enterprise integration between SAP ECC, CRM, and third-party logistics systems.
+              Performed data migration using LSMW and SQL-based reconciliation. Supported SIT/UAT and
+              post-go-live stabilization.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Business Analyst Consultant (SAP MM/WM/PP/FI) — Accenture</h4>
+            <span>Feb 2013 – May 2015 · Indonesia</span>
+            <p class="timeline-text">
+              Supported enterprise SAP implementation projects across supply chain and finance domains.
+              Participated in system integration testing, defect tracking, and provided end-user support
+              during transition phases.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Software Engineer — Rocklife</h4>
+            <span>Dec 2011 – Jan 2013 · Indonesia</span>
+            <p class="timeline-text">
+              Developed and maintained web applications using HTML, CSS, and JavaScript. Assisted in
+              troubleshooting application issues, testing, and deployment of web-based systems.
+            </p>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="skill">
+        <h3 class="h3 skills-title">Core Skills</h3>
+        <ul class="skills-list content-card">
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">SAP MM / WM / SD / FI</h5>
+              <data value="95">95%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:95%"></div>
+            </div>
+          </li>
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">SQL & Data Analysis</h5>
+              <data value="85">85%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:85%"></div>
+            </div>
+          </li>
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">API Testing (Postman / REST)</h5>
+              <data value="85">85%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:85%"></div>
+            </div>
+          </li>
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Incident & SIT/UAT Management</h5>
+              <data value="90">90%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:90%"></div>
+            </div>
+          </li>
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">ServiceNow / GitHub / AWS</h5>
+              <data value="75">75%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:75%"></div>
+            </div>
+          </li>
+
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">HTML / CSS / JavaScript</h5>
+              <data value="70">70%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width:70%"></div>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+    </article>
+
+    <!-- ===================== PORTFOLIO ===================== -->
+    <article class="portfolio" data-page="portfolio">
+      <header><h2 class="h2 article-title">Portfolio</h2></header>
+
+      <section class="projects">
+
+        <ul class="filter-list">
+          <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+          <li class="filter-item"><button data-filter-btn>Design</button></li>
+          <li class="filter-item"><button data-filter-btn>Web</button></li>
+        </ul>
+
+        <div class="filter-select-box">
+          <button class="filter-select" data-select>
+            <div class="select-value" data-selecct-value>Select category</div>
+            <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+          </button>
+          <ul class="select-list">
+            <li class="select-item"><button data-select-item>All</button></li>
+            <li class="select-item"><button data-select-item>Design</button></li>
+            <li class="select-item"><button data-select-item>Web</button></li>
+          </ul>
+        </div>
+
+        <ul class="project-list">
+
+          <!--
+            ADD YOUR PORTFOLIO IMAGES BELOW.
+            Steps:
+            1. Put your image files in:  assets/images/
+            2. Replace "portfolio-1.jpg" etc. with your actual filenames.
+            3. Update the title and category text.
+            4. Change data-category to match a filter button (lowercase): "design" or "web"
+
+            EXAMPLE STRUCTURE — duplicate this <li> block for each project:
+          -->
+
+          <li class="project-item active" data-filter-item data-category="design">
+            <a href="#">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <!--
+                  IMAGE SLOT 1
+                  Replace src with: ./assets/images/portfolio-1.jpg
+                  (Upload your first design portfolio image with that filename)
+                -->
+                <div style="width:100%;height:100%;background:var(--onyx);display:flex;align-items:center;justify-content:center;color:var(--light-gray-70);font-size:13px;border-radius:16px;">
+                  Add portfolio-1.jpg
+                </div>
+              </figure>
+              <h3 class="project-title">Project Title 1</h3>
+              <p class="project-category">Design</p>
+            </a>
+          </li>
+
+          <li class="project-item active" data-filter-item data-category="design">
+            <a href="#">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <!--
+                  IMAGE SLOT 2 → assets/images/portfolio-2.jpg
+                -->
+                <div style="width:100%;height:100%;background:var(--onyx);display:flex;align-items:center;justify-content:center;color:var(--light-gray-70);font-size:13px;border-radius:16px;">
+                  Add portfolio-2.jpg
+                </div>
+              </figure>
+              <h3 class="project-title">Project Title 2</h3>
+              <p class="project-category">Design</p>
+            </a>
+          </li>
+
+          <li class="project-item active" data-filter-item data-category="web">
+            <a href="#">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <!--
+                  IMAGE SLOT 3 → assets/images/portfolio-3.jpg
+                -->
+                <div style="width:100%;height:100%;background:var(--onyx);display:flex;align-items:center;justify-content:center;color:var(--light-gray-70);font-size:13px;border-radius:16px;">
+                  Add portfolio-3.jpg
+                </div>
+              </figure>
+              <h3 class="project-title">Project Title 3</h3>
+              <p class="project-category">Web</p>
+            </a>
+          </li>
+
+        </ul>
+      </section>
+    </article>
+
+    <!-- ===================== CONTACT ===================== -->
+    <article class="contact" data-page="contact">
+      <header><h2 class="h2 article-title">Contact</h2></header>
+
+      <section class="mapbox" data-mapbox>
+        <figure>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41644.97869989577!2d-123.18!3d49.166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673d42ee05f41%3A0x8db3257ab24d1c22!2sRichmond%2C%20BC!5e0!3m2!1sen!2sca!4v1690000000000"
+            width="400" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Richmond BC map">
+          </iframe>
+        </figure>
+      </section>
+
+      <section class="contact-form">
+        <h3 class="h3 form-title">Send a Message</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="form" data-form>
+          <!-- Replace YOUR_FORM_ID above with your Formspree endpoint for real email delivery -->
+          <div class="input-wrapper">
+            <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+            <input type="email" name="email" class="form-input" placeholder="Email address" required>
+          </div>
+          <textarea name="message" class="form-input" placeholder="Your message" required></textarea>
+          <button class="form-btn" type="submit" data-form-btn>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </section>
+    </article>
+
+  </div><!-- /main-content -->
+</main>
+
+<script>
+  // ===================== SIDEBAR TOGGLE =====================
+  const sidebar = document.querySelector('[data-sidebar]');
+  const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+  sidebarBtn && sidebarBtn.addEventListener('click', () => sidebar.classList.toggle('active'));
+
+  // ===================== NAVIGATION =====================
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const articles = document.querySelectorAll('[data-page]');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.textContent.trim().toLowerCase();
+      navLinks.forEach(l => l.classList.remove('active'));
+      articles.forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      const article = [...articles].find(a => a.dataset.page === target);
+      if (article) article.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // ===================== PORTFOLIO FILTER =====================
+  const filterBtns = document.querySelectorAll('[data-filter-btn]');
+  const filterItems = document.querySelectorAll('[data-filter-item]');
+  const selectBox = document.querySelector('[data-select]');
+  const selectItems = document.querySelectorAll('[data-select-item]');
+  const selectValue = document.querySelector('[data-selecct-value]');
+
+  function filterProjects(category) {
+    filterItems.forEach(item => {
+      const match = category === 'all' || item.dataset.category === category;
+      item.classList.toggle('active', match);
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterProjects(btn.textContent.trim().toLowerCase());
+    });
+  });
+
+  selectBox && selectBox.addEventListener('click', () => selectBox.classList.toggle('active'));
+
+  selectItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const val = item.textContent.trim().toLowerCase();
+      selectValue.textContent = item.textContent.trim();
+      selectBox.classList.remove('active');
+      filterBtns.forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === val));
+      filterProjects(val);
+    });
+  });
+</script>
 </body>
-
 </html>
