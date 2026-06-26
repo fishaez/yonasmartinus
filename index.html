@@ -138,7 +138,7 @@
     }
 
     /* =========================================================
-       SIDEBAR  — exact clone of original
+       SIDEBAR
     ========================================================= */
     .sidebar {
       background: var(--eerie-black-2);
@@ -146,16 +146,15 @@
       border-radius: 20px;
       padding: 15px;
       box-shadow: var(--shadow-1);
-      /* mobile: collapsed */
       overflow: hidden;
-      max-height: 112px;
+      /* mobile collapsed: tall enough to show avatar + name + button */
+      max-height: 230px;
       transition: max-height var(--tr2);
     }
-    .sidebar.active { max-height: 600px; }
+    .sidebar.active { max-height: 700px; }
 
     @media (min-width: 1024px) {
       .sidebar {
-        /* desktop: always fully open, fixed width */
         max-height: none;
         width: 260px;
         min-width: 260px;
@@ -164,37 +163,46 @@
       }
     }
 
-    /* top row inside sidebar */
+    /* sidebar-info: centred column — avatar on top, name below */
     .sidebar-info {
       position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 15px;
+      padding-bottom: 15px;
     }
 
     /* ── AVATAR ──
-       AVATAR: right now shows "YM" initials as fallback.
+       Currently shows "YM" initials.
        To use your own photo:
-         1. Put your square photo at:  assets/images/my-avatar.png
-         2. Delete the <div class="avatar-initials">YM</div> line
-         3. Uncomment the <img> line below it
+         1. Place file at:  assets/images/my-avatar.png
+         2. DELETE the line with <div class="avatar-initials">
+         3. UNCOMMENT the <img> line below it
     */
     .avatar-box {
       background: var(--bg-gradient-onyx);
       border-radius: 20px;
-      width: 80px; height: 80px;
-      flex-shrink: 0;
+      width: 150px; height: 150px;   /* bigger, like the original */
       display: flex; align-items:center; justify-content:center;
       overflow: hidden;
     }
-    .avatar-box img { width:80px; height:80px; object-fit:cover; border-radius:20px; }
-    .avatar-initials { font-size:28px; font-weight:600; color:var(--gold); letter-spacing:1px; }
+    .avatar-box img { width:150px; height:150px; object-fit:cover; border-radius:20px; }
+    .avatar-initials {
+      font-size: 52px; font-weight:600;
+      color: var(--gold); letter-spacing:2px;
+    }
 
-    .info-content .name { font-size:17px; font-weight:500; color:var(--white-2); margin-bottom:10px; white-space:nowrap; }
+    /* name + title centred below the avatar */
+    .info-content { text-align: center; }
+    .info-content .name {
+      font-size: 20px; font-weight:500; color:var(--white-2);
+      margin-bottom: 10px;
+    }
     .info-content .title {
       background: var(--onyx); color: var(--gold);
       font-size:11px; font-weight:300; border-radius:8px; padding:3px 12px;
-      width: max-content;
+      display: inline-block;
     }
 
     /* show/hide contacts button */
@@ -231,17 +239,23 @@
     /* =========================================================
        MAIN CONTENT COLUMN
     ========================================================= */
-    .main-content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0; }
+    .main-content { flex: 1; min-width: 0; }
 
-    /* ── NAVBAR ── */
-    .navbar {
-      background: hsla(240,1%,17%,.75);
-      backdrop-filter: blur(10px);
+    /* One card wrapping navbar + article — same as original vCard */
+    .content-card {
+      background: var(--eerie-black-2);
       border: 1px solid var(--jet);
       border-radius: 20px;
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+    }
+
+    /* Navbar sits flush at top of content-card */
+    .navbar {
+      background: hsla(240,1%,17%,.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--jet);
       padding: 0 20px;
-      box-shadow: var(--shadow-2);
-      margin-bottom: 15px;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -255,8 +269,8 @@
     }
     .navbar-link:hover, .navbar-link.active { color: var(--gold); }
 
-    /* ── ARTICLES ── */
-    article { display:none; }
+    /* Articles sit below navbar inside the same content-card */
+    article { display:none; padding: 30px; }
     article.active { display:block; animation: fadeUp .5s ease backwards; }
     @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
 
@@ -473,8 +487,9 @@
        MAIN CONTENT
   ===================================================== -->
   <div class="main-content">
+    <div class="content-card">
 
-    <!-- NAVBAR inside main content, just like the original -->
+    <!-- NAVBAR + articles share one card, exactly like the original -->
     <nav class="navbar">
       <ul class="navbar-list">
         <li><button class="navbar-link active" data-nav-link>About</button></li>
@@ -485,7 +500,7 @@
     </nav>
 
     <!-- ── ABOUT ── -->
-    <article class="about card active" data-page="about">
+    <article class="about active" data-page="about">
       <header><h2 class="h2 article-title">About Me</h2></header>
 
       <section class="about-text">
@@ -550,7 +565,7 @@
     </article>
 
     <!-- ── RESUME ── -->
-    <article class="resume card" data-page="resume">
+    <article class="resume" data-page="resume">
       <header><h2 class="h2 article-title">Resume</h2></header>
 
       <section class="timeline">
@@ -654,7 +669,7 @@
     </article>
 
     <!-- ── PORTFOLIO ── -->
-    <article class="portfolio card" data-page="portfolio">
+    <article class="portfolio" data-page="portfolio">
       <header><h2 class="h2 article-title">Portfolio</h2></header>
 
       <section class="projects">
@@ -746,7 +761,7 @@
     </article>
 
     <!-- ── CONTACT ── -->
-    <article class="contact card" data-page="contact">
+    <article class="contact" data-page="contact">
       <header><h2 class="h2 article-title">Contact</h2></header>
 
       <section class="mapbox" data-mapbox>
@@ -775,6 +790,7 @@
       </section>
     </article>
 
+    </div><!-- /content-card -->
   </div><!-- /main-content -->
 </div><!-- /wrapper -->
 
