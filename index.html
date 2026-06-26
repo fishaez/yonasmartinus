@@ -869,14 +869,17 @@
   const articles = document.querySelectorAll('[data-page]');
 
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const target = link.textContent.trim().toLowerCase();
-      navLinks.forEach(l => l.classList.remove('active'));
-      articles.forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-      const match = [...articles].find(a => a.dataset.page === target);
-      if (match) match.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  link.addEventListener('click', () => {
+    // remove active from all
+    navLinks.forEach(l => l.classList.remove('active'));
+    // add active to clicked one
+    link.classList.add('active');
+    // switch page
+    const target = link.textContent.trim().toLowerCase();
+    articles.forEach(a => a.classList.remove('active'));
+    const match = [...articles].find(a => a.dataset.page === target);
+    if (match) match.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
