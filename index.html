@@ -871,11 +871,21 @@
   const selectValue = document.querySelector('[data-select-value]');
 
   function filterProjects(category) {
-    filterItems.forEach(item => {
-      const show = category === 'all' || item.dataset.category === category.toLowerCase();
-      item.classList.toggle('active', show);
-    });
-  }
+  filterItems.forEach(item => {
+    const itemCategory = item.dataset.category;
+
+    if (category.toLowerCase() === 'all') {
+      item.classList.add('active');
+      return;
+    }
+
+    if (itemCategory === category.toLowerCase()) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
