@@ -125,6 +125,31 @@
       border-radius: inherit; z-index:-1;
     }
 
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 35px;
+    }
+
+    .page-header .navbar {
+        position: static;
+        margin: 0;
+      }
+
+    .page-header header {
+        margin: 0;
+    }
+    @media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+    }
+
+    .page-header .navbar {
+        margin-top: 20px;
+        width: 100%;
+    }
+    }
     /* headings */
     .h1,.h2,.h3,.h4,.h5 { color:var(--white-2); font-weight:500; line-height:1.3; }
     .h1 { font-size:24px; } .h2 { font-size:18px; }
@@ -490,19 +515,23 @@
     <div class="content-card">
 
     <!-- NAVBAR + articles share one card, exactly like the original -->
-    <nav class="navbar">
-      <ul class="navbar-list">
-        <li><button class="navbar-link active" data-nav-link>About</button></li>
-        <li><button class="navbar-link" data-nav-link>Resume</button></li>
-        <li><button class="navbar-link" data-nav-link>Portfolio</button></li>
-        <li><button class="navbar-link" data-nav-link>Contact</button></li>
-      </ul>
-    </nav>
-
     <!-- ── ABOUT ── -->
     <article class="about active" data-page="about">
-      <header><h2 class="h2 article-title">About Me</h2></header>
-
+      <div class="page-header">
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+        
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><button class="navbar-link active" data-nav-link>About</button></li>
+          <li><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li><button class="navbar-link" data-nav-link>Portfolio</button></li>
+          <li><button class="navbar-link" data-nav-link>Contact</button></li>
+        </ul>
+      </nav>
+      </div>
+      
       <section class="about-text">
         <p>
           I'm a Technical Support and Integration Specialist with 10+ years of experience supporting enterprise
