@@ -297,10 +297,27 @@
       font-size:15px;
       padding:8px 0;
       font-weight:500;
-      transition: color var(--tr1);
+      transition: 0.3s;
     }
-    .navbar-link:hover, .navbar-link.active { color: var(--gold) !important; }
-
+    .navbar-link:hover {
+      color: var(--white-2);
+    }
+    .navbar-link.active {
+      color: var(--gold);
+      font-weight: 600;
+      position: relative;
+    }
+    .navbar-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    
     /* Articles sit below navbar inside the same content-card */
     article { display:none; padding:40px 30px 30px; }
     article.active { display:block; animation: fadeUp .5s ease backwards; }
